@@ -10,7 +10,6 @@ const getInmuebles = async (req, res) => {
 };
 
 const createInmueble = async (req, res) => {
-    // TODO: Validaciones a partir de lo que llegue en el body
     try {
         const result = await InmuebleModel.create(req.body);
         res.json(result);
@@ -18,6 +17,7 @@ const createInmueble = async (req, res) => {
         res.json({ fatal: error.message });
     }
 };
+
 const updateInmueble = async (req, res) => {
     try {
         const { inmuebleId } = req.params;
@@ -27,6 +27,7 @@ const updateInmueble = async (req, res) => {
         res.json({ fatal: error.message });
     }
 };
+
 const deleteInmueble = async (req, res) => {
     try {
         const { inmuebleId } = req.params;

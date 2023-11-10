@@ -1,13 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 
+// Creación instancia de express app
 const app = express();
 
-// Config APP
-app.use(cors());
-app.use(express.json()); 
+// Configuración express app
+app.use(cors()); // Integración de CORS middleware
+app.use(express.json()); // Parsear requests en formato JSON
 
-// Rutas
+// Ruta
 app.use('/api', require('./routes/api'))
 
 module.exports = app;

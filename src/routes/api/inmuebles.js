@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const InmueblesController = require('../../controllers/inmuebles.controller');
-// TODO: add middlewares
-// const { checkProductId } = require('../../middlewares/products.middleware');
+const { checkInmuebleId } = require('../../middlewares/inmuebles.middleware');
 
+// Peticiones CRUD
 router.get('/', InmueblesController.getInmuebles);
 router.post('/', InmueblesController.createInmueble);
-router.put('/:inmuebleId', InmueblesController.updateInmueble);
-router.delete('/:inmuebleId', InmueblesController.deleteInmueble);
+router.put('/:inmuebleId', checkInmuebleId, InmueblesController.updateInmueble);
+router.delete('/:inmuebleId', checkInmuebleId, InmueblesController.deleteInmueble);
 
 module.exports = router;
