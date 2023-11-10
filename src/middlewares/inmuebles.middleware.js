@@ -19,7 +19,7 @@ const checkInmuebleId = async (req, res, next) => {
     try {
         const inmueble = await InmuebleModel.findById(inmuebleId);
         if (!inmueble) {
-            return handleError(res, 'El inmueble indicado no existe en nuestra base de datos');
+            return errorHandler(res, 'El inmueble indicado no existe en nuestra base de datos');
         }
         next();
     } catch (error) {
