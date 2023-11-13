@@ -5,7 +5,7 @@ const app = require('./src/app');
 require('dotenv').config();
 
 // Configuracion de bbdd
-require('./src/config/db')
+require('./src/config/db');
 
 // Creación del servidor
 const server = http.createServer(app);

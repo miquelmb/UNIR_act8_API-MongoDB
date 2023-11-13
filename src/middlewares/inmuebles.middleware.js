@@ -13,7 +13,7 @@ const checkInmuebleId = async (req, res, next) => {
     // Validar si inmuebleId es un formato de id correcto en mongoDB
     if (!mongoose.Types.ObjectId.isValid(inmuebleId)) {
         return errorHandler(res, 'El formato del id del inmueble no es válido');
-    }
+    };
 
     // Comprobar si el inmuebleId existe en la bbdd para actualizarlo
     try {
@@ -24,7 +24,7 @@ const checkInmuebleId = async (req, res, next) => {
         next();
     } catch (error) {
         return errorHandler(res, error.message);
-    }
+    };
 };
 
 module.exports = { checkInmuebleId };

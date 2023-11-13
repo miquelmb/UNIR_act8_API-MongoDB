@@ -6,7 +6,7 @@ const getInmuebles = async (req, res) => {
         res.json(products);
     } catch (error) {
         res.json({ fatal: error.message });
-    }
+    };
 };
 
 const createInmueble = async (req, res) => {
@@ -15,7 +15,7 @@ const createInmueble = async (req, res) => {
         res.json(result);
     } catch (error) {
         res.json({ fatal: error.message });
-    }
+    };
 };
 
 const updateInmueble = async (req, res) => {
@@ -25,7 +25,7 @@ const updateInmueble = async (req, res) => {
         res.json(result);
     } catch (error) {
         res.json({ fatal: error.message });
-    }
+    };
 };
 
 const deleteInmueble = async (req, res) => {
@@ -35,7 +35,7 @@ const deleteInmueble = async (req, res) => {
         res.json(result);
     } catch (error) {
         res.json({ fatal: error.message });
-    }
+    };
 };
 
 module.exports = { getInmuebles, createInmueble, updateInmueble, deleteInmueble};
